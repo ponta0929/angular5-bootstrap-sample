@@ -1,4 +1,59 @@
-<div>
-    <h1>Main Router</h1>
-    <router-outlet></router-outlet>
+<div class="container-fruid pt-3 mt-5">
+    <div class="row">
+        <div class="col">
+            <nav class="navbar fixed-top navbar-light main-topbar">
+                <div class="nav-item pl-4">
+                    <h2><i class="icon ion-logo-angular">Welcome!</i></h2>
+                </div>
+                <div class="nav-item ml pr-5 from-row">
+                    <h3 class="input-group">
+                        <input type="text" class="form-control mr-3" placeholder="sample text!!"/>
+                        <i class="icon ion-logo-buffer mr-1"></i>
+                        <i class="icon ion-md-sad mr-1"></i>
+                        <i class="icon ion-logo-github mr-1"></i>
+                    </h3>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!--<div class="row">
+            <div class="col-sm-12 col-lg-4">
+                <div class="row">
+                    <div class="col-lg-12 col-sm-3 col-3"><h3>navig</h3></div>
+                    <div class="col-lg-12 col-sm-3 col-3"><h3>main</h3></div>
+                    <div class="col-lg-12 col-sm-3 col-3"><h3>nav2</h3></div>
+                    <div class="col-lg-12 col-sm-3 col-3"><h3>nav3</h3></div>
+                </div>
+            </div>
+            <div class="col">
+                <h1>Main Router</h1>
+                <router-outlet></router-outlet>
+            </div>
+    </div> -->
+    <div class="row">
+        <div class="col-lg-4 col-sm-12">
+            <tabset [vertical]="true" type="pills">
+                <tab heading="Top Component!" (select)="onSelect(temp.id)">
+                    <alert type="success mt-2" >
+                        <strong><h5>To TopPage！</h5></strong>
+                        <a routerLink="/temp" id="temp" class="alert-link" #temp>toppage component</a>
+                        <p>
+                            正直もうちょっと頑張りたかった・・・<br>
+                            カルーセルでごまかしてる感半端ない<br>
+                            ていうか隠せてない(*´ω｀)
+                        </p>
+                    </alert>
+                </tab>
+                <tab heading="Search Component!"  (select)="onSelect(temp2.id)">
+                    <alert type="danger mt-2">
+                        <strong><h5>To SearchComponent！</h5></strong>
+                        <a routerLink="/temp2" id="temp2" class="alert-link" #temp2>serach component</a>
+                    </alert>
+                </tab>
+            </tabset>
+        </div>
+        <div class="col">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
 </div>
